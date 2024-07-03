@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Banner from './components/Banner/Banner';
 import Form from './components/Form';
+import Team from './components/Team';
 
 /*
 basically I just created two components (.js files)
@@ -21,6 +22,10 @@ function App() {
     <div className="App">
       <Banner/>
       <Form savingUser={data => saveUser(data)} />
+
+      <Team title="Counter Strike" />
+      <Team title="Rocket League" />
+      <Team title="Fortnite" />
     </div>
   );
 }
