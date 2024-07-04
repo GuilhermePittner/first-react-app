@@ -32,8 +32,6 @@ export const Form = (props) => {
         })
     }
 
-    const teams = ['Counter Strike', 'Rocket League', 'Fortnite'];
-
     return (
         <section className='form-section'>
 
@@ -45,7 +43,7 @@ export const Form = (props) => {
                 <TextField label="Role" placeholder="Insert role here..." value={role} keyPress={value => setRole(value)} />
                 <TextField label="Image" placeholder="Insert image url here..." value={image} keyPress={value => setImage(value)} />
                 
-                <Dropdown label="Team" teams={teams} value={team} keyPress={value => setTeam(value)} />
+                <Dropdown label="Team" teams={props.teams} value={team} keyPress={value => setTeam(value)} />
 
                 <Button>
                     Insert Team

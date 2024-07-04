@@ -4,28 +4,43 @@ import Form from './components/Form';
 import Team from './components/Team';
 
 /*
-basically I just created two components (.js files)
+basically I just created some components (.js files)
 and brought them here like a normal HTML tag
 */
 
 function App() {
 
+  const teams = [
+    {
+      "name": 'Counter Strike',
+      "firstColor": '#FFBA05',
+      "secondColor": '#FFF5D9'
+    },
+    {
+      "name": 'Rocket League',
+      "firstColor": '#E06B69',
+      "secondColor": '#FDE7E8'
+    },
+    {
+      "name": 'Fortnite',
+      "firstColor": '#82CFFA',
+      "secondColor": '#E8F8FF'
+    }
+  ];
+
   const [usersList, setUsersList] = useState([]);
 
   const saveUser = (data) => {
-    console.log(data);
     setUsersList([...usersList, data]);
-    console.log(usersList);
   }
 
   return (
     <div className="App">
       <Banner/>
-      <Form savingUser={data => saveUser(data)} />
+      <Form savingUser={data => saveUser(data)} teams={ teams.map(item => item.name) } />
 
-      <Team title="Counter Strike" />
-      <Team title="Rocket League" />
-      <Team title="Fortnite" />
+      { teams.map(item => <Team key={item["name"]} title={item["name"]} priColor={item["firstColor"]} secColor={item["secondColor"]} />) }
+
     </div>
   );
 }
