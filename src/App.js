@@ -33,13 +33,13 @@ function App() {
   const saveUser = (data) => {
     setUsersList([...usersList, data]);
   }
-
+  
   return (
     <div className="App">
       <Banner/>
       <Form savingUser={data => saveUser(data)} teams={ teams.map(item => item.name) } />
 
-      { teams.map(item => <Team key={item["name"]} title={item["name"]} priColor={item["firstColor"]} secColor={item["secondColor"]} />) }
+      { teams.map(item => <Team key={item["name"]} title={item["name"]} priColor={item["firstColor"]} secColor={item["secondColor"]} team={usersList.filter(user => user.team === item.name)} />) }
 
     </div>
   );

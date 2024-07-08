@@ -1,15 +1,15 @@
 import './Person.css'
 
-const Person = (props) => {
+const Person = ({name, description, image}) => {
     return (<div className='card'>
 
             <div className='card_header'>
-                <img src={props.image} alt={props.alt} />
+                <img src={image} alt={name} />
             </div>
             
             <div className='card_footer'>
-                <h4> {props.name} </h4>
-                <h5> {props.description} </h5>
+                <h4> {name} </h4>
+                <h5> {description} </h5>
             </div>
 
         </div>)
