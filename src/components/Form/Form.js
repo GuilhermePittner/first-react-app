@@ -23,6 +23,20 @@ export const Form = (props) => {
         e.preventDefault();
 
         // check if input fields isn't empty.
+        if (!name){
+            alert('Name field cannot be empty!');
+            return false
+        }
+
+        if (!role){
+            alert('Role field cannot be empty!');
+            return false
+        }
+
+        if (!image){
+            alert('Image field cannot be empty!');
+            return false
+        }
 
         props.savingUser({
             name,
@@ -30,6 +44,10 @@ export const Form = (props) => {
             image,
             team
         })
+
+        setName('');
+        setRole('');
+        setImage('');
     }
 
     return (

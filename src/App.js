@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Banner from './components/Banner/Banner';
 import Form from './components/Form';
 import Team from './components/Team';
+import Footer from './components/Footer';
 
 /*
 basically I just created some components (.js files)
@@ -41,6 +42,7 @@ function App() {
 
       { teams.map(item => <Team key={item["name"]} title={item["name"]} priColor={item["firstColor"]} secColor={item["secondColor"]} team={usersList.filter(user => user.team === item.name)} />) }
 
+      <Footer/>
     </div>
   );
 }
