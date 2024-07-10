@@ -1,9 +1,9 @@
 import './Person.css'
 
-const Person = ({name, description, image}) => {
+const Person = ({name, description, image, priColor}) => {
     return (<div className='card'>
 
-            <div className='card_header'>
+            <div className='card_header' style={{ backgroundColor: priColor }}>
                 <img src={image} alt={name} />
             </div>
             
