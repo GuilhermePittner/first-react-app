@@ -5,5 +5,3 @@
 ## I thought It was interesting, creating components and practicing my javascript knowledge was kinda fun.
 
 ## tbh, the array.map and array.filter are so helpful, this project really helped me improve my skills
-
-## If You'd like to see the project working, You can click here: https://react-team-display.vercel.app/
