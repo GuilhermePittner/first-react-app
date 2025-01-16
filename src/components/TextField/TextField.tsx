@@ -1,6 +1,14 @@
+import React from 'react';
 import './TextField.css'
 
-export const TextField = (props) => {
+interface TextFieldProps {
+  label: string,
+  value: string,
+  placeholder: string,
+  keyPress: (value: string) => void
+}
+
+export const TextField = (props: TextFieldProps) => {
 
   // ok, here things can get a bit confusing, let me
   // explain: my input has a property which will call
@@ -8,7 +16,7 @@ export const TextField = (props) => {
   // input has changed his value.
   // once it's called, my "setVar" function from
   // Form.js will update the var value.
-  const editedValue = (event) => {
+  const editedValue = (event: React.ChangeEvent<HTMLInputElement>) => {
     props.keyPress(event.target.value);
   }
 
