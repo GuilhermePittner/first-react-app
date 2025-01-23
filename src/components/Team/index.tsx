@@ -1,7 +1,15 @@
+import { ITeam } from '../../shared/interfaces/ITeam';
 import Person from '../Person';
 import './Team.css'
 
-const Team = (props) => {
+interface TeamProps {
+    priColor: string,
+    secColor: string,
+    title: string,
+    team: ITeam[]
+}
+
+const Team = (props: TeamProps) => {
     return (
 
         (props.team.length > 0) && 

@@ -1,6 +1,13 @@
 import './Person.css'
 
-const Person = ({name, description, image, priColor}) => {
+interface PersonProps {
+    name: string,
+    description: string,
+    image: string,
+    priColor: string
+}
+
+const Person = ({name, description, image, priColor} : PersonProps) => {
     return (<div className='card'>
 
             <div className='card_header' style={{ backgroundColor: priColor }}>

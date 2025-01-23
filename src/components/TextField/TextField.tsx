@@ -1,32 +1,27 @@
 import React from 'react';
-import './TextField.css'
+import './TextField.css';
 
 interface TextFieldProps {
-  label: string,
-  value: string,
-  placeholder: string,
-  keyPress: (value: string) => void
+  label: string;
+  value: string;
+  placeholder: string;
+  onChange: (value: string) => void; // Renomeado para "onChange"
 }
 
-export const TextField = (props: TextFieldProps) => {
-
-  // ok, here things can get a bit confusing, let me
-  // explain: my input has a property which will call
-  // this arrow function "editedValue" everytime the
-  // input has changed his value.
-  // once it's called, my "setVar" function from
-  // Form.js will update the var value.
+export const TextField = ({ onChange, label, value, placeholder }: TextFieldProps) => {
   const editedValue = (event: React.ChangeEvent<HTMLInputElement>) => {
-    props.keyPress(event.target.value);
-  }
+    onChange(event.target.value);
+  };
 
   return (
-    <div className='textfield-div'>
-
-      <label>{props.label}</label>
-
-      <input type='name' value={props.value} onChange={editedValue} placeholder={props.placeholder}></input>
-
+    <div className="textfield-div">
+      <label>{label}</label>
+      <input 
+        type="text" 
+        value={value} 
+        onChange={editedValue} 
+        placeholder={placeholder}
+      />
     </div>
   );
-}
+};
