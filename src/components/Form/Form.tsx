@@ -9,7 +9,7 @@ import './Form.css';
 
 interface FormProps {
     teams: string[];
-    savingUser: (team: ITeam) => void;
+    savingUser: (team: { name: string; role: string; image: string; team: string }) => void;
 }
 
 export const Form = (props: FormProps) => {
@@ -57,7 +57,7 @@ export const Form = (props: FormProps) => {
                     label="Name"
                     placeholder="Insert name here..."
                     value={name}
-                    onChange={(value: string) => setName(value)} // Agora usa "onChange"
+                    onChange={(value: string) => setName(value)}
                 />
 
                 <TextField
@@ -88,3 +88,5 @@ export const Form = (props: FormProps) => {
         </section>
     );
 };
+
+export default Form

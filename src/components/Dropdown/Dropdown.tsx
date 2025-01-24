@@ -13,7 +13,7 @@ export const Dropdown = (props: DropdownProps) => {
             <label>{props.label}</label>
             <select 
                 value={props.value} 
-                onChange={(event) => props.onChange(event.target.value)} // Alterado para "onChange"
+                onChange={(event) => props.onChange(event.target.value)}
             >
                 {props.teams.map((item) => (
                     <option key={item} value={item}>

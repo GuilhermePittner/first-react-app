@@ -12,7 +12,7 @@ interface TeamProps {
 const Team = (props: TeamProps) => {
     return (
 
-        (props.team.length > 0) && 
+        (props.team.length > 0) ? 
         <section className='team_section' style={{ backgroundColor: props.secColor }}>
             <h3 style={{ borderColor: props.priColor }}> {props.title} </h3>
 
@@ -21,7 +21,7 @@ const Team = (props: TeamProps) => {
             </div>
 
             {/* image='https://github.com/GuilhermePittner.png' alt='-' /> */}
-        </section>
+        </section> : <></>
     );
 }
 

@@ -5,7 +5,7 @@ interface TextFieldProps {
   label: string;
   value: string;
   placeholder: string;
-  onChange: (value: string) => void; // Renomeado para "onChange"
+  onChange: (value: string) => void;
 }
 
 export const TextField = ({ onChange, label, value, placeholder }: TextFieldProps) => {
