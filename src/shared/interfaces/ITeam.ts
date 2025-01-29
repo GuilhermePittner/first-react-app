@@ -2,5 +2,6 @@ export interface ITeam {
     name: string,
     role: string,
     image: string,
-    team?: string
+    team?: string,
+    date: Date
 }

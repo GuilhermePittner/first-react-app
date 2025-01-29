@@ -6,9 +6,10 @@ interface TextFieldProps {
   value: string;
   placeholder: string;
   onChange: (value: string) => void;
+  type?: "date" | "text"
 }
 
-export const TextField = ({ onChange, label, value, placeholder }: TextFieldProps) => {
+export const TextField = ({ onChange, label, value, placeholder, type = "text" }: TextFieldProps) => {
   const editedValue = (event: React.ChangeEvent<HTMLInputElement>) => {
     onChange(event.target.value);
   };
@@ -17,7 +18,7 @@ export const TextField = ({ onChange, label, value, placeholder }: TextFieldProp
     <div className="textfield-div">
       <label>{label}</label>
       <input 
-        type="text" 
+        type={type} 
         value={value} 
         onChange={editedValue} 
         placeholder={placeholder}

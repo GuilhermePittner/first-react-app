@@ -6,7 +6,7 @@ interface TeamProps {
     priColor: string,
     secColor: string,
     title: string,
-    team: ITeam[]
+    team: ITeam[],
 }
 
 const Team = (props: TeamProps) => {
@@ -17,7 +17,7 @@ const Team = (props: TeamProps) => {
             <h3 style={{ borderColor: props.priColor }}> {props.title} </h3>
 
             <div className='team_users'>    
-                { props.team.map(item => <Person key={item.name} name={item.name} description={item.role} image={item.image} priColor={props.priColor} /> ) }
+                { props.team.map(item => <Person key={item.name} name={item.name} description={item.role} image={item.image} priColor={props.priColor} date={item.date} /> ) }
             </div>
 
             {/* image='https://github.com/GuilhermePittner.png' alt='-' /> */}

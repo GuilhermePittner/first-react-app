@@ -9,6 +9,7 @@ interface User {
   team: string;
   role: string;
   image: string;
+  date: Date;
 }
 
 function App() {

@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { ITeam } from '../../shared/interfaces/ITeam';
 
 import { Button } from '../Button/Button';
 import { Dropdown } from '../Dropdown/Dropdown';
@@ -9,12 +8,13 @@ import './Form.css';
 
 interface FormProps {
     teams: string[];
-    savingUser: (team: { name: string; role: string; image: string; team: string }) => void;
+    savingUser: (team: { name: string; role: string; image: string; team: string, date: Date }) => void;
 }
 
 export const Form = (props: FormProps) => {
     const [name, setName] = useState('');
     const [role, setRole] = useState('');
+    const [date, setDate] = useState('');
     const [image, setImage] = useState('');
     const [team, setTeam] = useState('Counter Strike');
 
@@ -36,15 +36,19 @@ export const Form = (props: FormProps) => {
             return;
         }
 
+        const parsedDate = new Date(date);
+
         props.savingUser({
             name,
             role,
             image,
             team,
+            date: parsedDate
         });
 
         setName('');
         setRole('');
+        setDate('');
         setImage('');
     };
 
@@ -72,6 +76,14 @@ export const Form = (props: FormProps) => {
                     placeholder="Insert image url here..."
                     value={image}
                     onChange={(value: string) => setImage(value)}
+                />
+
+                <TextField
+                    label="Join Date"
+                    placeholder=""
+                    value={date}
+                    onChange={(value) => setDate(value)}
+                    type='date'
                 />
 
                 <Dropdown
