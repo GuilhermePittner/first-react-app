@@ -1,3 +1,3 @@
-import { TextField } from "./TextField";
+import { TextField } from "./TextField.tsx";
 
 export default TextField
